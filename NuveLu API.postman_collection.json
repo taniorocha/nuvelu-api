@@ -1,0 +1,278 @@
+{
+	"info": {
+		"_postman_id": "ead61b21-9e1e-434b-9ae5-d244a8de52ab",
+		"name": "NuveLu API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "26827927"
+	},
+	"item": [
+		{
+			"name": "login",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"tanio\",\r\n    \"password\": \"123\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/users/login",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"users",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create user",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"tanio\",\r\n    \"username\": \"tanio\",\r\n    \"password\": \"123\",\r\n    \"cover\": \"https://cdn-icons-png.flaticon.com/512/149/149071.png\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/users",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create goal",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3YzI3ZGZlYmExYjllZmQ0ODRmMTlhMyIsIm5hbWUiOiJ0YW5pbyIsInVzZXJuYW1lIjoidGFuaW8iLCJjb3ZlciI6Imh0dHA6Ly90ZXN0ZS51cmwiLCJleHAiOjE3NDA4MDY3MDJ9.n-bspFZDl6003421HS3jUK_Rst-ukadGy0L8lIcoCE4",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"user_id\": \"123\",\r\n    \"silver\": 1500,\r\n    \"gold\": 1600,\r\n    \"diamond\": 1700,\r\n    \"date\": \"2025-02\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/goals",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"goals"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create value",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3YzI3ZGZlYmExYjllZmQ0ODRmMTlhMyIsIm5hbWUiOiJ0YW5pbyIsInVzZXJuYW1lIjoidGFuaW8iLCJjb3ZlciI6Imh0dHA6Ly90ZXN0ZS51cmwiLCJleHAiOjE3NDA4MDY3MDJ9.n-bspFZDl6003421HS3jUK_Rst-ukadGy0L8lIcoCE4",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"user_id\": \"123\",\r\n    \"value\": 123456,\r\n    \"date\": \"2025-02-16\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/values",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"values"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get values",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3YzI3ZGZlYmExYjllZmQ0ODRmMTlhMyIsIm5hbWUiOiJ0YW5pbyIsInVzZXJuYW1lIjoidGFuaW8iLCJjb3ZlciI6Imh0dHBzOi8vY2RuLWljb25zLXBuZy5mbGF0aWNvbi5jb20vNTEyLzE0OS8xNDkwNzEucG5nIiwiZXhwIjoxNzQwODUxODU0fQ.XvdPKO9ER_XtSr9Df0nnYVZtjg-iJtxaIgW1rtLlNzk",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://127.0.0.1:8000/values",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"values"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "check token",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3YzI3ZGZlYmExYjllZmQ0ODRmMTlhMyIsIm5hbWUiOiJ0YW5pbyIsInVzZXJuYW1lIjoidGFuaW8iLCJjb3ZlciI6Imh0dHBzOi8vY2RuLWljb25zLXBuZy5mbGF0aWNvbi5jb20vNTEyLzE0OS8xNDkwNzEucG5nIiwiZXhwIjoxNzQwODUxODU0fQ.XvdPKO9ER_XtSr9Df0nnYVZtjg-iJtxaIgW1rtLlNzk",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://127.0.0.1:8000/check/token",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"check",
+						"token"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get goals",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3YzI3ZGZlYmExYjllZmQ0ODRmMTlhMyIsIm5hbWUiOiJ0YW5pbyIsInVzZXJuYW1lIjoidGFuaW8iLCJjb3ZlciI6Imh0dHA6Ly90ZXN0ZS51cmwiLCJleHAiOjE3NDA4MDY3MDJ9.n-bspFZDl6003421HS3jUK_Rst-ukadGy0L8lIcoCE4",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://127.0.0.1:8000/goals",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"goals"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "health check",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

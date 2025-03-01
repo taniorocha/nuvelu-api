@@ -1,0 +1,22 @@
+version: '3.8'
+services:
+  nuvelu_api:
+    image: nuvelu-api:latest
+    container_name: nuvelu-api
+    ports:
+      - '8000:8000'
+    environment:
+      - MONGO_DB_STR_CONNECTION=mongodb://root:ineedtochangethispassword@mongodb/
+      - JWT_EXPIRATION_SECONDS=120
+      - JWT_SECRET_KEY=RXNzYSBjaGF2ZSBhcXVpIG7Do28gZGV2ZSBzZXIgamFtYWlzLCBlbSBoaXDDs3Rlc2UgYWxndW1hIGxpZGEsIHBvaXMgc2Ugdm9jw6ogbGV1IGlzc28sIMOpIHBvcnF1ZSBzYWJlIGxlciwgTXV1dXV1dWhhYWFhIQ==
+  mongodb:
+    image: mongo:latest
+    container_name: mongodb
+    ports:
+      - '27017:27017'
+    volumes:
+      - ./mongo-backup:/data/db
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=root
+      - MONGO_INITDB_ROOT_PASSWORD=ineedtochangethispassword
+  
