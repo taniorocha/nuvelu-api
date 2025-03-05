@@ -120,8 +120,7 @@ async def create_goal(request: CreateGoalRequest, response: Response, user: User
 @app.get("/values")
 async def get_daily_values_monthly(user: User = Depends(authenticate)):
     values = []
-    # async for value in app.db.daily_values.find({ "user_id": user.id }):
-    async for value in app.db.daily_values.find():
+    async for value in app.db.daily_values.find({ "user_id": user.id }):
         values.append({
             "id": value["_id"],
             "user_id": value["user_id"],
