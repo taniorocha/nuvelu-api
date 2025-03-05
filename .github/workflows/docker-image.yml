@@ -12,7 +12,7 @@ jobs:
       - name: Login to DockerHub
         if: success()
         run: |
-          docker login --username tnioa --password ${{ env.DOCKER_HUB_TOKEN }}
+          docker login --username tnioa --password ${{ vars.DOCKER_HUB_TOKEN }}
 
       - name: Build and Push Docker image     
         if: success()
