@@ -1,0 +1,20 @@
+name: Docker Image CI
+on:
+  push:
+    branches: [ "main" ]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repo
+        uses: actions/checkout@v4
+
+      - name: Login to DockerHub
+        if: success()
+        run: |
+          docker login --username tnioa --password ${{ secrets.DOCKER_HUB_TOKEN }}
+
+      - name: Build and Push Docker image     
+        if: success()
+        run: |
+          docker build -t tnioa/nuvelu-api:1.0.${{ github.run_number }} --output type=image,push=true .
