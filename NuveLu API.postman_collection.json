@@ -24,15 +24,14 @@
 					}
 				},
 				"url": {
-					"raw": "http://127.0.0.1:8000/users/login",
-					"protocol": "http",
+					"raw": "https://nuvelu-api.taniorocha.com.br/users/login",
+					"protocol": "https",
 					"host": [
-						"127",
-						"0",
-						"0",
-						"1"
+						"nuvelu-api",
+						"taniorocha",
+						"com",
+						"br"
 					],
-					"port": "8000",
 					"path": [
 						"users",
 						"login"
@@ -51,7 +50,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"name\": \"tanio\",\r\n    \"username\": \"tanio\",\r\n    \"password\": \"123\",\r\n    \"cover\": \"https://cdn-icons-png.flaticon.com/512/149/149071.png\"\r\n}",
+					"raw": "{\r\n    \"name\": \"Tanio Rocha\",\r\n    \"username\": \"tanio\",\r\n    \"password\": \"123\",\r\n    \"cover\": \"https://cdn-icons-png.flaticon.com/512/149/149071.png\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -59,17 +58,55 @@
 					}
 				},
 				"url": {
-					"raw": "http://127.0.0.1:8000/users",
-					"protocol": "http",
+					"raw": "https://nuvelu-api.taniorocha.com.br/users",
+					"protocol": "https",
 					"host": [
-						"127",
-						"0",
-						"0",
-						"1"
+						"nuvelu-api",
+						"taniorocha",
+						"com",
+						"br"
 					],
-					"port": "8000",
 					"path": [
 						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create push subscription",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3ZDQ3Zjk0NGJmYWNjZGE5MWM3YmFhOSIsIm5hbWUiOiJUYW5pbyBSb2NoYSIsInVzZXJuYW1lIjoidGFuaW8iLCJjb3ZlciI6Imh0dHBzOi8vY2RuLWljb25zLXBuZy5mbGF0aWNvbi5jb20vNTEyLzE0OS8xNDkwNzEucG5nIiwiZXhwIjoxNzQxOTgwMDczfQ.vnxznZfCVrxJlX4zIJht9y7TcKa3wnx_Q5Vtou_elPs",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"user_id\": \"342342342\",\r\n    \"subscription\": \"{'teste': 'teste'}\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://nuvelu-api.taniorocha.com.br/pushsubscription",
+					"protocol": "https",
+					"host": [
+						"nuvelu-api",
+						"taniorocha",
+						"com",
+						"br"
+					],
+					"path": [
+						"pushsubscription"
 					]
 				}
 			},
@@ -99,15 +136,14 @@
 					}
 				},
 				"url": {
-					"raw": "http://127.0.0.1:8000/goals",
-					"protocol": "http",
+					"raw": "https://nuvelu-api.taniorocha.com.br/goals",
+					"protocol": "https",
 					"host": [
-						"127",
-						"0",
-						"0",
-						"1"
+						"nuvelu-api",
+						"taniorocha",
+						"com",
+						"br"
 					],
-					"port": "8000",
 					"path": [
 						"goals"
 					]
@@ -139,15 +175,14 @@
 					}
 				},
 				"url": {
-					"raw": "http://127.0.0.1:8000/values",
-					"protocol": "http",
+					"raw": "https://nuvelu-api.taniorocha.com.br/values",
+					"protocol": "https",
 					"host": [
-						"127",
-						"0",
-						"0",
-						"1"
+						"nuvelu-api",
+						"taniorocha",
+						"com",
+						"br"
 					],
-					"port": "8000",
 					"path": [
 						"values"
 					]
@@ -165,20 +200,19 @@
 				"header": [
 					{
 						"key": "Authorization",
-						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3YzI3ZGZlYmExYjllZmQ0ODRmMTlhMyIsIm5hbWUiOiJ0YW5pbyIsInVzZXJuYW1lIjoidGFuaW8iLCJjb3ZlciI6Imh0dHBzOi8vY2RuLWljb25zLXBuZy5mbGF0aWNvbi5jb20vNTEyLzE0OS8xNDkwNzEucG5nIiwiZXhwIjoxNzQwODUxODU0fQ.XvdPKO9ER_XtSr9Df0nnYVZtjg-iJtxaIgW1rtLlNzk",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3ZDQ3Zjk0NGJmYWNjZGE5MWM3YmFhOSIsIm5hbWUiOiJUYW5pbyBSb2NoYSIsInVzZXJuYW1lIjoidGFuaW8iLCJjb3ZlciI6Imh0dHBzOi8vY2RuLWljb25zLXBuZy5mbGF0aWNvbi5jb20vNTEyLzE0OS8xNDkwNzEucG5nIiwiZXhwIjoxNzQxOTc5ODQzfQ._vLfqLMcBw9u-vxT5z0kO5OPK9Bnay9EUafjvk-WJow",
 						"type": "text"
 					}
 				],
 				"url": {
-					"raw": "http://127.0.0.1:8000/values",
-					"protocol": "http",
+					"raw": "https://nuvelu-api.taniorocha.com.br/values",
+					"protocol": "https",
 					"host": [
-						"127",
-						"0",
-						"0",
-						"1"
+						"nuvelu-api",
+						"taniorocha",
+						"com",
+						"br"
 					],
-					"port": "8000",
 					"path": [
 						"values"
 					]
@@ -201,15 +235,14 @@
 					}
 				],
 				"url": {
-					"raw": "http://127.0.0.1:8000/check/token",
-					"protocol": "http",
+					"raw": "https://nuvelu-api.taniorocha.com.br/check/token",
+					"protocol": "https",
 					"host": [
-						"127",
-						"0",
-						"0",
-						"1"
+						"nuvelu-api",
+						"taniorocha",
+						"com",
+						"br"
 					],
-					"port": "8000",
 					"path": [
 						"check",
 						"token"
@@ -233,15 +266,14 @@
 					}
 				],
 				"url": {
-					"raw": "http://127.0.0.1:8000/goals",
-					"protocol": "http",
+					"raw": "https://nuvelu-api.taniorocha.com.br/goals",
+					"protocol": "https",
 					"host": [
-						"127",
-						"0",
-						"0",
-						"1"
+						"nuvelu-api",
+						"taniorocha",
+						"com",
+						"br"
 					],
-					"port": "8000",
 					"path": [
 						"goals"
 					]
@@ -258,17 +290,13 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://127.0.0.1:8000/",
-					"protocol": "http",
+					"raw": "https://nuvelu-api.taniorocha.com.br",
+					"protocol": "https",
 					"host": [
-						"127",
-						"0",
-						"0",
-						"1"
-					],
-					"port": "8000",
-					"path": [
-						""
+						"nuvelu-api",
+						"taniorocha",
+						"com",
+						"br"
 					]
 				}
 			},

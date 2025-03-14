@@ -3,7 +3,7 @@ from datetime import datetime
 from fastapi import Depends, FastAPI, HTTPException, Response, Security, status
 from fastapi.security import APIKeyHeader
 from db import shutdown_db_client, startup_db_client
-from contracts import CreateDailyValueRequest, CreateGoalRequest, CreateUserRequest, LoginRequest
+from contracts import CreateDailyValueRequest, CreateGoalRequest, CreatePushSubscription, CreateUserRequest, LoginRequest
 from models import User
 from auth import create_access_token, validate_access_token
 from settings import Settings
@@ -147,6 +147,25 @@ async def create_daily_value(request: CreateDailyValueRequest, response: Respons
     
     request.user_id = user.id
     await app.db.daily_values.insert_one(request.model_dump())
+    response.status_code = status.HTTP_201_CREATED
+
+    return {}
+
+@app.post("/pushsubscription")
+async def create_push_subscription(request: CreatePushSubscription, response: Response, user: User = Depends(authenticate)):
+    user_exist = await app.db.users.find_one(ObjectId(user.id))
+    if user_exist is None:
+        response.status_code = status.HTTP_404_NOT_FOUND
+        return {}
+    
+    request.user_id = user.id
+
+    push_subscription = await app.db.push_subscription.find_one({ "user_id": user.id })
+    if push_subscription is not None:
+        await app.db.push_subscription.update_one({ "_id": ObjectId(push_subscription["_id"]) }, { "$set": request.model_dump() })
+        return {}
+
+    await app.db.push_subscription.insert_one(request.model_dump())
     response.status_code = status.HTTP_201_CREATED
 
     return {}

@@ -19,3 +19,8 @@ class DailyValue(BaseModel):
     user_id: str
     value: float
     date: str
+
+class PushSubscription(BaseModel):
+    id: str
+    user_id: str
+    subscription: str

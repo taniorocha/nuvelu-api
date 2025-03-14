@@ -22,3 +22,7 @@ class CreateDailyValueRequest(BaseModel):
     user_id: str
     value: float
     date: str
+
+class CreatePushSubscription(BaseModel):
+    user_id: str
+    subscription: str
