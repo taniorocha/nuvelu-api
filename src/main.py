@@ -159,6 +159,7 @@ async def create_push_subscription(request: CreatePushSubscription, response: Re
         return {}
     
     request.user_id = user.id
+    request.created_at = str(datetime.now())
 
     push_subscription = await app.db.push_subscription.find_one({ "user_id": user.id })
     if push_subscription is not None:

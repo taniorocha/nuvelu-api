@@ -26,3 +26,4 @@ class CreateDailyValueRequest(BaseModel):
 class CreatePushSubscription(BaseModel):
     user_id: str
     subscription: str
+    created_at: str | None = None

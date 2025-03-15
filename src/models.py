@@ -24,3 +24,4 @@ class PushSubscription(BaseModel):
     id: str
     user_id: str
     subscription: str
+    created_at: str
