@@ -45,7 +45,12 @@ async def health_check():
     return {"health_check": "ok"}
 
 @app.get("/check/token")
-async def check_token(user: User = Depends(authenticate)):
+async def check_token(response: Response, user: User = Depends(authenticate)):
+    user_exist = await app.db.users.find_one({ "username": user.username })
+    if user_exist is None:
+        response.status_code = status.HTTP_404_NOT_FOUND
+        return {}
+    
     return {
         "token_status": "ok",
         "username": user.username
@@ -55,8 +60,8 @@ async def check_token(user: User = Depends(authenticate)):
 async def create_user(request: CreateUserRequest, response: Response):  
     user_exist = await app.db.users.find_one({ "username": request.username })
     if user_exist is not None:
-        response.status_code = status.HTTP_404_NOT_FOUND
-        return { "detail": "Já existe um usuário com este username" }
+        response.status_code = status.HTTP_400_BAD_REQUEST
+        return { "detail": "Não é possível utilizar este nome de usuário." }
     
     await app.db.users.insert_one(request.model_dump())
     response.status_code = status.HTTP_201_CREATED
